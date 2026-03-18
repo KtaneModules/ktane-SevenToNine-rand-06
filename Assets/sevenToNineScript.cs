@@ -172,7 +172,7 @@ public class sevenToNineScript : MonoBehaviour {
 		{
 			int oldStage = stage;
 			ProcessTwitchCommand(commands[answers[stage]]);
-			while (stage == oldStage) yield return new WaitForSeconds(0.1f);
+			yield return new WaitWhile(() => stage == oldStage);
 		}
 	}
 }
